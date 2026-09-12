@@ -10,4 +10,4 @@ app.get('/', (req, res) => {
   res.json({ message: "ہیلو دنیا! ہماری ماڈیولر API کامیابی سے چل رہی ہے!" });
 });
 
-module.exports = app;
+module.exports = app; 
