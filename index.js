@@ -4,23 +4,15 @@ const PORT = 3000;
 
 app.use(express.json());
 
+// یہاں ہم نے نئے ٹیسٹ راؤٹ کے ماڈیول کو امپورٹ کر لیا ہے
+const testRoute = require('./routes/test');
+
+// اب ہم بتا رہے ہیں کہ جب بھی /test پر جائیں تو اس ماڈیول کو استعمال کرو
+app.use('/test', testRoute);
+
+// بنیادی ہوم پیج راؤٹ
 app.get('/', (req, res) => {
-  res.json({ message: "ہیلو دنیا! مبارک ہو! Node.js API کامیابی سے چل رہی ہے!" });
-});
-
-app.get('/users', (req, res) => {
-  const users = [
-    { id: 1, name: "علی" },
-    { id: 2, name: "احمد" }
-  ];
-  res.json(users);
-});
-
-app.get('/test', (req, res) => {
-  res.json({
-    status: "Success",
-    message: "میرا کلاؤڈ API بالکل زبردست کام کر رہا ہے!"
-  });
+  res.json({ message: "ہیلو دنیا! ہماری ماڈیولر API کامیابی سے چل رہی ہے!" });
 });
 
 app.listen(PORT, () => {
