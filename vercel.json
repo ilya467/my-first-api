@@ -1,7 +1,21 @@
 {
+  "version": 2,
+  "builds": [
+    { "src": "index.js", "use": "@vercel/node" }
+  ],
   "routes": [
     { "src": "/products", "dest": "/routes/products.js" },
     { "src": "/test", "dest": "/routes/test.js" },
-    { "src": "/(.*)", "dest": "/public/index.html" }
+    { "src": "/", "dest": "/public/index.html" }
+  ]
+}{
+  "version": 2,
+  "builds": [
+    { "src": "index.js", "use": "@vercel/node" }
+  ],
+  "routes": [
+    { "src": "/products", "dest": "/routes/products.js" },
+    { "src": "/test", "dest": "/routes/test.js" },
+    { "src": "/", "dest": "/public/index.html" }
   ]
 }
